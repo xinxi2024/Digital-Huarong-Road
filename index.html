@@ -15,6 +15,8 @@
                     <option value="3">3 x 3</option>
                     <option value="4">4 x 4</option>
                     <option value="5">5 x 5</option>
+                    <option value="6">6 x 6</option>
+                    <option value="7">7 x 7</option>
                 </select>
                 <button id="newGame">新游戏</button>
                 <button id="rules">游戏规则</button>
@@ -56,6 +58,16 @@
                     <span class="achievement-name">解谜大师</span>
                     <span class="achievement-desc">完成5x5模式</span>
                 </div>
+                <div class="achievement" data-id="patience_master">
+                    <span class="achievement-icon">🎯</span>
+                    <span class="achievement-name">耐心大师</span>
+                    <span class="achievement-desc">完成6x6模式</span>
+                </div>
+                <div class="achievement" data-id="challenge_king">
+                    <span class="achievement-icon">🌟</span>
+                    <span class="achievement-name">挑战王者</span>
+                    <span class="achievement-desc">完成7x7模式</span>
+                </div>
             </div>
         </aside>
 
@@ -67,7 +79,7 @@
                 <div class="rules-content">
                     <p>数字华容道是一个经典的益智游戏，游戏规则如下：</p>
                     <ol>
-                        <li>游戏面板由 N×N 的方格组成（N = 3, 4 或 5）</li>
+                        <li>游戏面板由 N×N 的方格组成（N = 3, 4, 5, 6 或 7）</li>
                         <li>其中包含了 1 到 N²-1 的数字方块和一个空白方块</li>
                         <li>玩家可以点击与空白方块相邻的数字方块来移动它</li>
                         <li>目标是将所有数字按照从小到大的顺序排列，空白方块在最后</li>
