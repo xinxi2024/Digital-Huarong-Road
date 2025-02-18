@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字华容道</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>数字华容道</h1>
+            <div class="game-controls">
+                <select id="boardSize">
+                    <option value="3">3 x 3</option>
+                    <option value="4">4 x 4</option>
+                    <option value="5">5 x 5</option>
+                </select>
+                <button id="newGame">新游戏</button>
+                <button id="rules">游戏规则</button>
+                <button id="undo">撤销</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-info">
+                <div class="stats">
+                    <span>步数: <span id="moves">0</span></span>
+                    <span>时间: <span id="timer">00:00</span></span>
+                </div>
+            </div>
+
+            <div class="game-board" id="gameBoard"></div>
+
+            <div class="background-controls">
+                <input type="file" id="bgImage" accept="image/*" style="display: none">
+                <button id="changeBg">更换背景</button>
+            </div>
+        </main>
+
+        <aside class="achievements" id="achievements">
+            <h2>成就</h2>
+            <div class="achievements-list">
+                <div class="achievement" data-id="speed_demon">
+                    <span class="achievement-icon">🏃</span>
+                    <span class="achievement-name">速度之王</span>
+                    <span class="achievement-desc">在60秒内完成3x3模式</span>
+                </div>
+                <div class="achievement" data-id="perfect_solve">
+                    <span class="achievement-icon">⭐</span>
+                    <span class="achievement-name">完美解决</span>
+                    <span class="achievement-desc">使用最少步数完成游戏</span>
+                </div>
+                <div class="achievement" data-id="master">
+                    <span class="achievement-icon">👑</span>
+                    <span class="achievement-name">解谜大师</span>
+                    <span class="achievement-desc">完成5x5模式</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 游戏规则模态框 -->
+        <div id="rulesModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>游戏规则</h2>
+                <div class="rules-content">
+                    <p>数字华容道是一个经典的益智游戏，游戏规则如下：</p>
+                    <ol>
+                        <li>游戏面板由 N×N 的方格组成（N = 3, 4 或 5）</li>
+                        <li>其中包含了 1 到 N²-1 的数字方块和一个空白方块</li>
+                        <li>玩家可以点击与空白方块相邻的数字方块来移动它</li>
+                        <li>目标是将所有数字按照从小到大的顺序排列，空白方块在最后</li>
+                        <li>游戏会记录你的移动步数和用时</li>
+                        <li>完成游戏后可以获得相应的成就奖励</li>
+                    </ol>
+                    <p>提示：仔细思考每一步，尽量用最少的步数完成游戏！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
